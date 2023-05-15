@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class move : MonoBehaviour
 {
+    public string next_scene;
     public float speed;
     public float jumpForce;
     public float jumpCooldown;
@@ -72,6 +74,11 @@ public class move : MonoBehaviour
         {
             move_speed_mult = 0.5f;
             move_speed *= move_speed_mult;
+        }
+        //portal is defrant it loads a new scene
+        if(other.tag == "portal")
+        {
+            SceneManager.LoadScene(next_scene);
         }
     }
 
