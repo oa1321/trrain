@@ -27,7 +27,7 @@ public class player_cam : MonoBehaviour
         x_rot += mouseX;
         y_rot -= mouseY;
         //90 and -90 limits the camra up and down range so we cant just loop around with the arrow
-        x_rot = Mathf.Clamp(x_rot, -90f, 90f);
+        x_rot = Mathf.Clamp(x_rot, -45f, 45);
 
         //we dont want to spin the z axis
         transform.rotation = Quaternion.Euler(x_rot, y_rot, 0);
